@@ -1,18 +1,18 @@
 $ErrorActionPreference = "Stop"
 
 $user = "Showen"
-$sourceDir = "$env:LOCALAPPDATA\Microsoft\PowerToys"
-$destDir = "C:\Users\$user\windows11-build\setup\configurations\powertoys"                  # ← Change this to your preferred folder
-$zipFile = Join-Path $destDir "powertoys-config.zip"
-$tempDir = Join-Path "C:\Users\$user\AppData\Local\Temp" "PowerToys"
+$sourceDir = "C:\Users\$user\AppData\Roaming\Zed"
+$destDir = "C:\Users\$user\windows11-build\setup\applications\zed"                  # ← Change this to your preferred folder
+$zipFile = Join-Path $destDir "zed.zip"
+$tempDir = Join-Path "C:\Users\$user\AppData\Local\Temp" "zed"
 
-Write-Host "Backing up PowerToys..." -ForegroundColor Cyan
+Write-Host "Backing up Zed..." -ForegroundColor Cyan
 
 # Create dest directory if missing
 if (-not (Test-Path $destDir)) { New-Item -Path $destDir -ItemType Directory | Out-Null }
 
 # Step 1: Copy to temporary folder (handles locked files better)
-Write-Host "Step 1: Copying PowerToys configuration to temporary folder..." -ForegroundColor Yellow
+Write-Host "Step 1: Copying Zed configuration to temporary folder..." -ForegroundColor Yellow
 if (Test-Path $tempDir) { Remove-Item $tempDir -Recurse -Force -ErrorAction SilentlyContinue }
 Copy-Item -Path $sourceDir -Destination $tempDir -Recurse -Force -ErrorAction Continue
 
