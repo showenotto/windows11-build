@@ -37,4 +37,4 @@ Remove-Item $tempExtract -Recurse -Force -ErrorAction SilentlyContinue
 Write-Host "`nStep 5: Restarting PowerToys..." -ForegroundColor Yellow
 Start-Process "$env:LOCALAPPDATA\PowerToys\PowerToys.exe"
 
-Write-Host "`nRestore finished!" -ForegroundColor Green
+Write-Host "`nDone!" -ForegroundColor Green

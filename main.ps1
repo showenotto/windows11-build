@@ -51,7 +51,8 @@ function Invoke-ScriptsInFolder {
         return
     }
 
-    Write-Host "`n$SectionName" -ForegroundColor Magenta
+    Write-Host ("-" * 70) -ForegroundColor DarkMagenta
+    Write-Host "$SectionName" -ForegroundColor Magenta
     Write-Host ("-" * 70) -ForegroundColor DarkMagenta
     Write-Host ""
 
@@ -61,7 +62,6 @@ function Invoke-ScriptsInFolder {
 
         try {
             & $script.FullName
-            Write-Host "OK" -ForegroundColor Green -NoNewline
             Write-Host ""
         }
         catch {
@@ -90,6 +90,6 @@ switch ($Mode.ToLower()) {
 }
 
 Write-Host "`n" -NoNewline
-Write-Host ("-" * 46) -ForegroundColor Magenta
+Write-Host ("-" * 40) -ForegroundColor Magenta
 Write-Host "Finished $Mode operation" -ForegroundColor Green
 Write-Host "Completed: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')" -ForegroundColor DarkGray

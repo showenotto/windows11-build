@@ -6,8 +6,7 @@ $destDir = "C:\Users\$user\windows11-build\setup\configurations\powertoys"      
 $zipFile = Join-Path $destDir "powertoys-config.zip"
 $tempDir = Join-Path "C:\Users\$user\AppData\Local\Temp" "PowerToys"
 
-Write-Host "PowerToys Configuration Backup..." -ForegroundColor Cyan
-
+Write-Host "Backing up PowerToys..." -ForegroundColor Cyan
 
 # Create dest directory if missing
 if (-not (Test-Path $destDir)) { New-Item -Path $destDir -ItemType Directory | Out-Null }
