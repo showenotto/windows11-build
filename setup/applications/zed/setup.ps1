@@ -9,7 +9,7 @@ $tempExtract = Join-Path "C:\Users\$user\AppData\Local\Temp" "zed"
 Write-Host "Restoring Zed configuration..." -ForegroundColor Cyan
 
 # Create roaming directory if missing
-if (-not (Test-Path $targetDir)) { New-Item -Path $destDir -ItemType Directory | Out-Null }
+if (-not (Test-Path $targetDir)) { New-Item -Path $targetDir -ItemType Directory | Out-Null }
 
 if (-not (Test-Path $sourceZip)) {
     Write-Error "Backup zip not found: $sourceZip"
