@@ -16,10 +16,6 @@ $guiApps = @(
 
     # Remote Access & Virtualization
     "Oracle.VirtualBox"                     # VirtualBox – VMs for testing network setups
-
-    # Other Heavy/Useful GUI Apps
-    "7zip.7zip"                             # 7-Zip – powerful archive manager GUI
-
 )
 
 # ────────────────────────────────────────────────

@@ -14,6 +14,7 @@ $tools = @(
     "Git.Git"
     "marlocarlo.psmux"
     "Docker.DockerCLI"
+    "7zip.7zip"                             # 7-Zip – powerful archive manager GUI
 
     # Networking
     "Insecure.Nmap"                          # Network scanner / port scanner
