@@ -10,6 +10,7 @@ Write-Host ""
 $tools = @(
     # Essentials
     "Microsoft.PowerToys"
+    "Microsoft.Powershell"
     "Python.Python.3.14"
     "Git.Git"
     "marlocarlo.psmux"
@@ -43,7 +44,7 @@ foreach ($id in $tools) {
     Write-Host "-> $id" -ForegroundColor Cyan -NoNewline
 
     # Check if already installed (winget list returns exit code 0 if found)
-    $check = winget list --id $id --exact --source winget 2>$null
+    $check = winget list --id $id --source winget 2>$null
     if ($LASTEXITCODE -eq 0 -and $check -match $id) {
         Write-Host "  [Already installed]" -ForegroundColor DarkGreen
         $skippedCount++
@@ -52,7 +53,7 @@ foreach ($id in $tools) {
 
     # Install
     Write-Host "  Installing..." -ForegroundColor Yellow -NoNewline
-    $result = winget install --id $id --source winget --silent --accept-package-agreements --accept-source-agreements 2>$null
+    $result = winget install --id $id --source winget --silent --accept-package-agreements --accept-source-agreements --disable-interactivity 2>$null
 
     if ($LASTEXITCODE -eq 0) {
         Write-Host "  OK" -ForegroundColor Green
